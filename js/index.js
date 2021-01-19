@@ -85,7 +85,6 @@ function createProduct(event) {
   const priceNewProduct = document.querySelector('#createPrice').value;
   console.log(nameNewProduct, priceNewProduct)
 
-  //const productStructure = newProduct;
   console.log(productStructure)  
 
   const parentNode = document.querySelector('#cart tbody');
