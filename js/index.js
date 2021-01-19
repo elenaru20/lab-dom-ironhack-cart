@@ -72,56 +72,65 @@ function removeProduct(event) {
 }
 
 // ITERATION 5 - Bonus
+const productStructure = document.querySelector('.product').cloneNode('true');
 
 function createProduct(event) {
   //... your code goes here
   const target = event.currentTarget;
-  // console.log('The target in create is:', target);
+  console.log('The target in create is:', target);
+  // target the name and unit price input DOM nodes, extract their values
+  const nameNewProduct = document.querySelector('#createName').value;
+  //const defaultLabel = document.querySelector('#createName').placeholder
+
+  const priceNewProduct = document.querySelector('#createPrice').value;
+  console.log(nameNewProduct, priceNewProduct)
+
+  //const productStructure = newProduct;
+  console.log(productStructure)  
+
+  const parentNode = document.querySelector('#cart tbody');
+  console.log(parentNode)
+  
+  productStructure.querySelector('.name span').innerText = nameNewProduct;
+  
+  productStructure.querySelector('.price span').innerText = priceNewProduct;
+
+
+  productStructure.querySelector('.btn-remove').addEventListener('click', removeProduct);
+
+
+  parentNode.appendChild(productStructure)
+  
+ //------- 
+
+//alternative:
+  
   // // target the name and unit price input DOM nodes, extract their values
   // const nameNewProduct = document.querySelector('#createName').value;
   // const priceNewProduct = document.querySelector('#createPrice').value;
-  // console.log(nameNewProduct, priceNewProduct)
-
-  // const productStructure = document.querySelector('.product').cloneNode('true');
+  //  console.log(nameNewProduct, priceNewProduct)
+  //     const productStructure = document.createElement("tr");
+  //         productStructure.classList.add("product");
+  //         productStructure.innerHTML =
+  //           `<td class="name">
+  //             <span>${nameNewProduct}</span>
+  //           </td>
+  //           <td class="price">$<span>${priceNewProduct}</span></td>
+  //           <td class="quantity">
+  //             <input class = "input" type="number" value="0" min="0" placeholder="Quantity" />
+  //           </td>
+  //           <td class="subtotal">$<span>0</span></td>
+  //           <td class="action">
+  //             <button class="btn btn-remove">Remove</button>
+  //           </td>
+  //           </tr>`;
   // console.log(productStructure)  
 
   // const parentNode = document.querySelector('#cart tbody');
   // console.log(parentNode)
-  
-  // productStructure.querySelector('.name span').innerText = nameNewProduct;
-  // productStructure.querySelector('.price span').innerText = priceNewProduct;
-
-
   // productStructure.querySelector('.btn-remove').addEventListener('click', removeProduct);
 
-
   // parentNode.appendChild(productStructure)
-  
-  
-  
-
-//alternative:
-  
-    // const price = document.querySelector('.new-price').value;
-    // const name = document.querySelector('.new-name').value;
-    // const parent = document.querySelector('tbody')
-    // const newProduct = document.createElement("tr");
-    //       newProduct.classList.add("product");
-    //       newProduct.innerHTML =
-    //         `<td class="name">
-    //           <span>${name}</span>
-    //         </td>
-    //         <td class="price">$<span>${price}</span></td>
-    //         <td class="quantity">
-    //           <input class = "input" type="number" value="0" min="0" placeholder="Quantity" />
-    //         </td>
-    //         <td class="subtotal">$<span>0</span></td>
-    //         <td class="action">
-    //           <button class="btn btn-remove">Remove</button>
-    //         </td>
-    //         </tr>`;
-    // newProduct.querySelector('.btn-remove').addEventListener('click', removeProduct);
-    // parent.appendChild(newProduct);
     
  
   calculateAll()
