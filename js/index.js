@@ -80,7 +80,6 @@ function createProduct(event) {
   console.log('The target in create is:', target);
   // target the name and unit price input DOM nodes, extract their values
   const nameNewProduct = document.querySelector('#createName').value;
-  //const defaultLabel = document.querySelector('#createName').placeholder
 
   const priceNewProduct = document.querySelector('#createPrice').value;
   console.log(nameNewProduct, priceNewProduct)
@@ -89,16 +88,21 @@ function createProduct(event) {
 
   const parentNode = document.querySelector('#cart tbody');
   console.log(parentNode)
+
+
+  
+  
   
   productStructure.querySelector('.name span').innerText = nameNewProduct;
   
   productStructure.querySelector('.price span').innerText = priceNewProduct;
 
-
   productStructure.querySelector('.btn-remove').addEventListener('click', removeProduct);
 
-
   parentNode.appendChild(productStructure)
+
+  document.querySelector('#createName').value = "";
+  document.querySelector('#createPrice').value = 0;
   
  //------- 
 
